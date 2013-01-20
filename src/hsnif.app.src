@@ -1,0 +1,1 @@
+{application, hsnif, [{vsn, "0.1"}]}.

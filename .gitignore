@@ -1,0 +1,4 @@
+hs_src/Foreign/Erlang/Nif.hs
+ebin/
+*.hi
+*.o

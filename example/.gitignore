@@ -1,0 +1,3 @@
+HsNif*.hs
+HsNif*_stub.h
+hsnif*.c
