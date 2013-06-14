@@ -117,6 +117,9 @@ foreign import ccall unsafe enif_make_uint64 :: ErlNifEnv -> #{type ErlNifUInt64
 foreign import ccall unsafe enif_is_exception :: ErlNifEnv -> ErlNifTerm -> IO #{type int}
 foreign import ccall unsafe enif_make_reverse_list :: ErlNifEnv -> ErlNifTerm -> Ptr ErlNifTerm -> IO #{type int}
 foreign import ccall unsafe enif_is_number :: ErlNifEnv -> ErlNifTerm -> IO #{type int}
+#if ERL_NIF_MAJOR_VERSION >= 2 && ERL_NIF_MINOR_VERSION >=4
+foreign import ccall unsafe enif_consume_timeslice :: ErlNifEnv -> #{type int} -> IO #{type int}
+#endif
 
 
 class ErlTerm a where
