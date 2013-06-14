@@ -15,21 +15,25 @@ Rebar plugin implements `compile` and `clean` commands.
 
 To add rebar plugin to a new project, add following lines to rebar.config:
 
-	{deps, [
-	  {hsnif, ".*", {git, "https://github.com/urbanserj/hsnif.git", "master"}}
-	]}.
-	{plugin_dir, "deps/hsnif/src"}.
-	{plugins, [hsnif]}.
+```erlang
+{deps, [
+  {hsnif, ".*", {git, "https://github.com/urbanserj/hsnif.git", "master"}}
+]}.
+{plugin_dir, "deps/hsnif/src"}.
+{plugins, [hsnif]}.
+```
 
 
 For specifying Target, Source and Compilation options (the last is optional) these lines need to be added:
 
-	{hsnif_spec, [
-	  {"priv/target.so", "hs_src/Source.hs", [
-	    {cflags, ["-O"]},
-	    {ldflags, []}
-	  ]}
-	]}.
+```erlang
+{hsnif_spec, [
+  {"priv/target.so", "hs_src/Source.hs", [
+    {cflags, ["-O"]},
+    {ldflags, []}
+  ]}
+]}.
+```
 
 
 Haskell code
@@ -42,10 +46,12 @@ All exported from Source file functions will be NIF functions, and each of them 
 
 Example:
 
-	id :: ErlNifTerm -> ErlNifTerm
-	sum :: Int -> Int -> Int
-	reverse :: ErlNifEnv -> ErlNifTerm -> IO ErlNifTerm
-	tratata :: ErlNifEnv -> IO ErlNifTerm
+```haskell
+id :: ErlNifTerm -> ErlNifTerm
+sum :: Int -> Int -> Int
+reverse :: ErlNifEnv -> ErlNifTerm -> IO ErlNifTerm
+tratata :: ErlNifEnv -> IO ErlNifTerm
+```
 
 
 Foreign.Erlang.Nif
